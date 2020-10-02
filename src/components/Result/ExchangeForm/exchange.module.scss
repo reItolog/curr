@@ -1,0 +1,29 @@
+.exchangeForm{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-top: 5%;
+  padding: 2%;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  width: 90%;
+}
+
+.exchangeCurrencyContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 5%;
+}
+
+.exchangeSelectContainer {
+  display: flex;
+  align-items: center;
+}
+
+.amountContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.amountInput{
+
+}

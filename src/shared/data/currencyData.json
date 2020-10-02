@@ -1,0 +1,132 @@
+{
+  "currency": [
+    {
+      "value": "CAD",
+      "title": "CAD"
+    },
+    {
+      "value": "HKD",
+      "title": "HKD"
+    },
+    {
+      "value": "ISK",
+      "title": "ISK"
+    },
+    {
+      "value": "PHP",
+      "title": "PHP"
+    },
+    {
+      "value": "DKK",
+      "title": "DKK"
+    },
+    {
+      "value": "HUF",
+      "title": "HUF"
+    },
+    {
+      "value": "CZK",
+      "title": "CZK"
+    },
+    {
+      "value": "GBP",
+      "title": "GBP"
+    },
+    {
+      "value": "RON",
+      "title": "RON"
+    },
+    {
+      "value": "SEK",
+      "title": "SEK"
+    },
+    {
+      "value": "IDR",
+      "title": "IDR"
+    },
+    {
+      "value": "INR",
+      "title": "INR"
+    },
+    {
+      "value": "BRL",
+      "title": "BRL"
+    },
+    {
+      "value": "HRK",
+      "title": "HRK"
+    },
+    {
+      "value": "JPY",
+      "title": "JPY"
+    },
+    {
+      "value": "THB",
+      "title": "THB"
+    },
+    {
+      "value": "CHF",
+      "title": "CHF"
+    },
+    {
+      "value": "EUR",
+      "title": "EUR"
+    },
+    {
+      "value": "MYR",
+      "title": "MYR"
+    },
+    {
+      "value": "BGN",
+      "title": "BGN"
+    },
+    {
+      "value": "TRY",
+      "title": "TRY"
+    },
+    {
+      "value": "CNY",
+      "title": "CNY"
+    },
+    {
+      "value": "NOK",
+      "title": "NOK"
+    },
+    {
+      "value": "NZD",
+      "title": "NZD"
+    },
+    {
+      "value": "ZAR",
+      "title": "ZAR"
+    },
+    {
+      "value": "USD",
+      "title": "USD"
+    },
+    {
+      "value": "MXN",
+      "title": "MXN"
+    },
+    {
+      "value": "SGD",
+      "title": "SGD"
+    },
+    {
+      "value": "AUD",
+      "title": "AUD"
+    },
+    {
+      "value": "ILS",
+      "title": "ILS"
+    },
+    {
+      "value": "KRW",
+      "title": "KRW"
+    },
+    {
+      "value": "PLN",
+      "title": "PLN"
+    }
+  ]
+}
