@@ -1,23 +1,19 @@
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
-import {  StateType } from 'typesafe-actions';
+import { StateType } from 'typesafe-actions';
 
 // OPTIONS FLOW
-import { reducer as options } from './config/reducer';
-import { epics as optionsEpics } from './config/epics';
+import { epics as confiEpics, reducer as options } from './config';
 
-
-const rootEpic = combineEpics(
-  ...optionsEpics,
-);
+const rootEpic = combineEpics(...confiEpics);
 
 // Epics
 const epicMiddleware = createEpicMiddleware();
 
 // Reducers
 const reducer = combineReducers({
-  options,
+  config: options,
 });
 
 // export type RootActions = ActionType< >;
