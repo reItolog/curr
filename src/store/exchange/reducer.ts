@@ -8,6 +8,8 @@ const initialState: ExchangeState = {
     rates: {},
   },
   amount: 0,
+  from: 'USD',
+  to: 'EUR',
   error: '',
   loading: false,
 };
@@ -32,6 +34,24 @@ export function reducer(state = initialState, action: ExchangeActionType): Excha
       return {
         ...state,
         error: action.payload,
+      };
+    }
+    case ActionTypes.SET_FROM: {
+      return {
+        ...state,
+        from: action.payload,
+      };
+    }
+    case ActionTypes.SET_TO: {
+      return {
+        ...state,
+        to: action.payload,
+      };
+    }
+    case ActionTypes.SET_AMOUNT: {
+      return {
+        ...state,
+        amount: action.payload,
       };
     }
     default: {

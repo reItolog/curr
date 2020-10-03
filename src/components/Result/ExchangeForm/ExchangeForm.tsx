@@ -8,7 +8,7 @@ import Button from '@material-ui/core/Button';
 
 // Store
 import { getOptions } from '../../../store/config/selectors';
-import { getExchangeLoading } from '../../../store/exchange/selectors';
+import { getExchangeLoading, getFrom, getTo, getAmount } from '../../../store/exchange/selectors';
 import { Actions } from '../../../store/exchange/actions';
 
 import styles from './exchange.module.scss';
@@ -17,24 +17,23 @@ const ExchangeForm = memo(() => {
   const dispatch = useDispatch();
   const currencyOptions = useSelector(getOptions);
   const exchangeLoading = useSelector(getExchangeLoading);
-
-  const [from, setFrom] = useState('');
-  const [to, setTo] = useState('');
-  const [amount, setAmount] = useState<number>(0);
+  const from = useSelector(getFrom);
+  const to = useSelector(getTo);
+  const amount = useSelector(getAmount);
 
   const handleFromChange = (e: React.ChangeEvent<{ value: unknown }>) => {
     const value = e.target.value as string;
-    setFrom(value);
+    dispatch(Actions.setFrom(value));
   };
 
   const handleToChange = (e: React.ChangeEvent<{ value: unknown }>) => {
     const value = e.target.value as string;
-    setTo(value);
+    dispatch(Actions.setTo(value));
   };
 
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = Number(e.target.value);
-    setAmount(value);
+    dispatch(Actions.setAmount(value));
   };
 
   const handleSubmit = (e: React.SyntheticEvent) => {

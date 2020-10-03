@@ -1,5 +1,7 @@
 import { applyMiddleware, createStore, combineReducers } from 'redux';
 import { combineEpics, createEpicMiddleware } from 'redux-observable';
+import { persistStore, persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import { StateType } from 'typesafe-actions';
 
@@ -9,6 +11,11 @@ import { epics as confiEpics, reducer as options } from './config';
 // Exchange Flow
 import { reducer as exchange } from './exchange/reducer';
 import { epics as exchangeEpics } from './exchange/epics';
+
+const persistConfig = {
+  key: 'root',
+  storage,
+};
 
 const rootEpic = combineEpics(...confiEpics, ...exchangeEpics);
 
@@ -21,6 +28,8 @@ const reducer = combineReducers({
   exchange,
 });
 
+const persistedReducer = persistReducer(persistConfig, reducer);
+
 // export type RootActions = ActionType< >;
 
 export type AppState = StateType<typeof reducer>;
@@ -32,9 +41,10 @@ export default (preloadedState = {}) => {
   const enhancers = [middlewareEnhancer];
   const composedEnhancers = composeWithDevTools(...enhancers);
 
-  const store = createStore(reducer, preloadedState, composedEnhancers);
+  const store: any = createStore(persistedReducer, preloadedState, composedEnhancers);
 
   epicMiddleware.run(rootEpic);
 
-  return store;
+  const persistor = persistStore(store);
+  return { store, persistor };
 };
