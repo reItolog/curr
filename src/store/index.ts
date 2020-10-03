@@ -12,12 +12,16 @@ import { epics as confiEpics, reducer as options } from './config';
 import { reducer as exchange } from './exchange/reducer';
 import { epics as exchangeEpics } from './exchange/epics';
 
+// History flow
+import { reducer as history } from './history/reducer';
+import { epics as historyEpics } from './history/epics';
+
 const persistConfig = {
   key: 'root',
   storage,
 };
 
-const rootEpic = combineEpics(...confiEpics, ...exchangeEpics);
+const rootEpic = combineEpics(...confiEpics, ...exchangeEpics, ...historyEpics);
 
 // Epics
 const epicMiddleware = createEpicMiddleware();
@@ -26,6 +30,7 @@ const epicMiddleware = createEpicMiddleware();
 const reducer = combineReducers({
   config: options,
   exchange,
+  history,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer);

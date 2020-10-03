@@ -8,6 +8,7 @@ import './shared/styles/root.scss';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import createStore from './store';
+import Loader from './shared/UI/Loader/Loader';
 
 const { store, persistor } = createStore();
 
@@ -15,7 +16,7 @@ ReactDOM.render(
   <>
     <CssBaseline />
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate loading={<Loader />} persistor={persistor}>
         <App />
       </PersistGate>
     </Provider>
