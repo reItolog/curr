@@ -7,6 +7,7 @@ const initialState: ExchangeState = {
     date: '',
     rates: {},
   },
+  amount: 0,
   error: '',
   loading: false,
 };
@@ -23,7 +24,8 @@ export function reducer(state = initialState, action: ExchangeActionType): Excha
       return {
         ...state,
         loading: false,
-        data: action.payload,
+        data: action.payload.data,
+        amount: action.payload.amount,
       };
     }
     case ActionTypes.FETCH_EXCHANGE_FAILURE: {

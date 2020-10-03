@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 
 // Store
 import { getOptions } from '../../../store/config/selectors';
+import { getExchangeLoading } from '../../../store/exchange/selectors';
 import { Actions } from '../../../store/exchange/actions';
 
 import styles from './exchange.module.scss';
@@ -15,10 +16,11 @@ import styles from './exchange.module.scss';
 const ExchangeForm = memo(() => {
   const dispatch = useDispatch();
   const currencyOptions = useSelector(getOptions);
+  const exchangeLoading = useSelector(getExchangeLoading);
 
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
-  const [amount, setAmount] = useState<string>('');
+  const [amount, setAmount] = useState<number>(0);
 
   const handleFromChange = (e: React.ChangeEvent<{ value: unknown }>) => {
     const value = e.target.value as string;
@@ -31,7 +33,7 @@ const ExchangeForm = memo(() => {
   };
 
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
+    const value = Number(e.target.value);
     setAmount(value);
   };
 
@@ -76,7 +78,7 @@ const ExchangeForm = memo(() => {
           />
         </div>
       </div>
-      <Button variant='contained' color='primary' type='submit'>
+      <Button variant='contained' color='primary' type='submit' disabled={exchangeLoading}>
         Primary
       </Button>
     </form>

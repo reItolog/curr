@@ -15,7 +15,7 @@ const getRatesEpic: Epic = (action$) =>
       };
       return exchangeService.getRates(ratesPayload).pipe(
         map((data) => {
-          return Actions.fetchExchangeAsync.success(data);
+          return Actions.fetchExchangeAsync.success({ data, amount: payload.amount });
         }),
       );
     }),

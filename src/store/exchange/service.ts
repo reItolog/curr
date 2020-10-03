@@ -5,7 +5,6 @@ import { catchError, map } from 'rxjs/operators';
 import queryString from 'query-string';
 
 import config from '../../shared/config/config.json';
-import { RatesData } from './types';
 
 interface RatesPayload {
   base: string;

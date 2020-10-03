@@ -32,14 +32,11 @@ interface Props {
 const CurSelect: React.FC<Props> = memo(({ currencyData, label, onChange, value }) => {
   const classes = useStyles();
 
-  if (!currencyData?.length)
-    return <div className={`${classes.formControl} ${classes.empty}`}></div>;
-
   return (
     <FormControl className={classes.formControl}>
       <InputLabel id={label}>{label}</InputLabel>
       <Select labelId={label} value={value} onChange={onChange}>
-        {currencyData.map((item) => {
+        {currencyData?.map((item) => {
           return (
             <MenuItem key={item} value={item}>
               {item}

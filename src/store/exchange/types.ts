@@ -11,5 +11,6 @@ export interface RatesData {
 export interface ExchangeState {
   data: RatesData;
   error: string;
+  amount: number;
   loading: boolean;
 }
