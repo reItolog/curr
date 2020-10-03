@@ -6,7 +6,11 @@ import { StateType } from 'typesafe-actions';
 // OPTIONS FLOW
 import { epics as confiEpics, reducer as options } from './config';
 
-const rootEpic = combineEpics(...confiEpics);
+// Exchange Flow
+import { reducer as exchange } from './exchange/reducer';
+import { epics as exchangeEpics } from './exchange/epics';
+
+const rootEpic = combineEpics(...confiEpics, ...exchangeEpics);
 
 // Epics
 const epicMiddleware = createEpicMiddleware();
@@ -14,6 +18,7 @@ const epicMiddleware = createEpicMiddleware();
 // Reducers
 const reducer = combineReducers({
   config: options,
+  exchange,
 });
 
 // export type RootActions = ActionType< >;

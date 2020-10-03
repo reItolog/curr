@@ -1,6 +1,6 @@
 import React, { useState, memo } from 'react';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import CurSelect from '../../../shared/components/CurSelect/CurSelect';
 import TextField from '@material-ui/core/TextField';
@@ -8,10 +8,12 @@ import Button from '@material-ui/core/Button';
 
 // Store
 import { getOptions } from '../../../store/config/selectors';
+import { Actions } from '../../../store/exchange/actions';
 
 import styles from './exchange.module.scss';
 
 const ExchangeForm = memo(() => {
+  const dispatch = useDispatch();
   const currencyOptions = useSelector(getOptions);
 
   const [from, setFrom] = useState('');
@@ -33,8 +35,20 @@ const ExchangeForm = memo(() => {
     setAmount(value);
   };
 
+  const handleSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+
+    const payload = {
+      from,
+      to,
+      amount,
+    };
+
+    dispatch(Actions.fetchExchangeAsync.request(payload));
+  };
+
   return (
-    <form className={styles.exchangeForm}>
+    <form className={styles.exchangeForm} onSubmit={handleSubmit}>
       <div className={styles.formContent}>
         <div className={styles.exchangeSelectContainer}>
           <CurSelect
@@ -62,7 +76,7 @@ const ExchangeForm = memo(() => {
           />
         </div>
       </div>
-      <Button variant='contained' color='primary'>
+      <Button variant='contained' color='primary' type='submit'>
         Primary
       </Button>
     </form>
