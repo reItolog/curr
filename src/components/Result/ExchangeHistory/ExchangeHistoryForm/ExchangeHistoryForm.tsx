@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
+import HistoryIcon from '@material-ui/icons/History';
 import Button from '@material-ui/core/Button';
 
 // Store
@@ -43,7 +44,7 @@ const ExchangeHistoryForm = memo(() => {
       </div>
 
       <Button variant='contained' color='primary' type='submit'>
-        Primary
+        <HistoryIcon />
       </Button>
     </form>
   );

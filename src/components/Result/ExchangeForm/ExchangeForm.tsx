@@ -78,7 +78,7 @@ const ExchangeForm = memo(() => {
         </div>
       </div>
       <Button variant='contained' color='primary' type='submit' disabled={exchangeLoading}>
-        Primary
+        change
       </Button>
     </form>
   );

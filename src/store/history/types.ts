@@ -11,6 +11,7 @@ export interface HistoryData {
   start_at: DateType;
   base: string;
   end_at: DateType;
+  error?: string;
 }
 
 export interface HistoryState {

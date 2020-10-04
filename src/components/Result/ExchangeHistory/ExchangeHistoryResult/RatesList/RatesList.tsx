@@ -35,8 +35,8 @@ const RatesList: React.FC<Props> = memo(({ data }) => {
         data.map((item) => {
           return (
             <ListItem key={item.date}>
-              <ListItemText primary={base} secondary={item.rate.currency} />
-              <ListItemText primary={item.rate.value.toFixed(2)} secondary={item.date} />
+              <ListItemText primary={base} secondary={item.date} />
+              <ListItemText primary={item.rate.value.toFixed(2)} secondary={item.rate.currency} />
             </ListItem>
           );
         })}
