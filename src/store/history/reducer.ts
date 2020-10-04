@@ -47,6 +47,19 @@ export function reducer(state = initialState, action: HistoryActionType): Histor
         endAt: action.payload,
       };
     }
+    case ActionTypes.RESET_HISTORY: {
+      return {
+        ...state,
+        startAt: '',
+        endAt: '',
+        data: {
+          base: '',
+          end_at: '',
+          start_at: '',
+          rates: {},
+        },
+      };
+    }
     default: {
       return state;
     }

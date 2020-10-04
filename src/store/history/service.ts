@@ -2,14 +2,16 @@ import { ajax } from 'rxjs/ajax';
 import { of, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
+import { DateType } from '../../shared/interfaces/exchange';
+
 import queryString from 'query-string';
 
 import config from '../../shared/config/config.json';
 
 interface HistoryPayload {
   symbols: string;
-  startAt: string;
-  endAt: string;
+  start_at: DateType;
+  end_at: DateType;
   base: string;
 }
 

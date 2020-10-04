@@ -12,7 +12,7 @@ const ExchangeResult = memo(() => {
   const amount = useSelector(getSumExchangeAmount);
   return (
     <div className={styles.exchangeResult}>
-      <TextField value={amount || 0} label='---' variant='outlined' disabled={true} />
+      <TextField value={amount} label='---' variant='outlined' disabled={true} />
     </div>
   );
 });

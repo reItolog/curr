@@ -1,0 +1,22 @@
+@import '../../../../shared/styles/mixins.scss';
+
+.exchangeHistoryForm {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+
+  @include phones() {
+    justify-content: center;
+  }
+}
+
+.exchangeHistoryFormFields {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-bottom: 5%;
+  flex: 1;
+  justify-content: space-around;
+}

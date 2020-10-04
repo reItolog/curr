@@ -46,7 +46,7 @@ export default (preloadedState = {}) => {
   const enhancers = [middlewareEnhancer];
   const composedEnhancers = composeWithDevTools(...enhancers);
 
-  const store: any = createStore(persistedReducer, preloadedState, composedEnhancers);
+  const store = createStore(persistedReducer, preloadedState, composedEnhancers);
 
   epicMiddleware.run(rootEpic);
 

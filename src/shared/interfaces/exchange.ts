@@ -3,3 +3,5 @@ export interface ExchangePayload {
   to: string;
   amount: number;
 }
+
+export type DateType = string;
