@@ -1,7 +1,8 @@
-@import '../../../shared//styles//mixins.scss';
+@import '../../../shared/styles/mixins.scss';
 
 .exchangeForm {
   display: flex;
+  position: relative;
   justify-content: space-between;
   flex-direction: column;
   margin-bottom: 5%;
@@ -28,4 +29,10 @@
 .amountContainer {
   display: flex;
   justify-content: space-between;
+}
+
+.exchangeFormError {
+  color: black;
+  height: 50px;
+  text-align: center;
 }

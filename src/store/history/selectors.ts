@@ -15,9 +15,9 @@ export const getHistoryRates = createSelector(historyState, (state) => {
   if (!state?.data?.rates) return [];
   return Object.keys(state?.data?.rates).map((item) => {
     const entry: any = state.data.rates[item];
-
+    let data;
     for (const [key, value] of Object.entries(entry)) {
-      return {
+      data = {
         date: item,
         rate: {
           currency: key,
@@ -25,5 +25,6 @@ export const getHistoryRates = createSelector(historyState, (state) => {
         },
       };
     }
+    return data;
   });
 });

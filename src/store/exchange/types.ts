@@ -1,11 +1,7 @@
-export interface Rates {
-  currency: number;
-}
-
 export interface RatesData {
   base: string;
   date: string;
-  rates: any;
+  rates: Record<string, number>;
 }
 
 export interface ExchangeState {

@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo , useState} from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -20,6 +20,8 @@ const ExchangeForm = memo(() => {
   const from = useSelector(getFrom);
   const to = useSelector(getTo);
   const amount = useSelector(getAmount);
+
+  const [exchangeError, setExchangeError] = useState('');
 
   const handleFromChange = (e: React.ChangeEvent<{ value: unknown }>) => {
     const value = e.target.value as string;
@@ -44,16 +46,24 @@ const ExchangeForm = memo(() => {
       to,
       amount,
     };
+
+    if(from == to) {
+      setExchangeError('pick different currencies!!!');
+      return;
+    }
+
     dispatch(Actions.fetchExchangeAsync.request(payload));
+    setExchangeError('');
   };
 
   return (
     <form className={styles.exchangeForm} onSubmit={handleSubmit}>
+      <div className={styles.exchangeFormError}>{exchangeError}</div>
       <div className={styles.formContent}>
         <div className={styles.exchangeSelectContainer}>
           <CurSelect
             label={from}
-            value={from}
+            value={from || ''}
             onChange={handleFromChange}
             currencyData={currencyOptions}
           />
@@ -61,7 +71,7 @@ const ExchangeForm = memo(() => {
         <div className={styles.exchangeSelectContainer}>
           <CurSelect
             label={to}
-            value={to}
+            value={to || ''}
             onChange={handleToChange}
             currencyData={currencyOptions}
           />
