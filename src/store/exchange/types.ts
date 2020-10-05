@@ -5,7 +5,7 @@ export interface Rates {
 export interface RatesData {
   base: string;
   date: string;
-  rates: Rates | Record<string, unknown>;
+  rates: any;
 }
 
 export interface ExchangeState {

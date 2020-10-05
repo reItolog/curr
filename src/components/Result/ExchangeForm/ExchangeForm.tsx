@@ -44,7 +44,6 @@ const ExchangeForm = memo(() => {
       to,
       amount,
     };
-    console.log(currencyOptions);
     dispatch(Actions.fetchExchangeAsync.request(payload));
   };
 
