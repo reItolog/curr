@@ -32,9 +32,9 @@ const CurSelect: React.FC<Props> = memo(({ currencyData, label, onChange, value 
     <FormControl className={classes.formControl}>
       <InputLabel id={label}>{label}</InputLabel>
       <Select labelId={label} value={value} onChange={onChange}>
-        {currencyData?.map((item) => {
+        {currencyData?.map((item, index) => {
           return (
-            <MenuItem key={item} value={item}>
+            <MenuItem key={index} value={item}>
               {item}
             </MenuItem>
           );
