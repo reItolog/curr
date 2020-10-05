@@ -2,11 +2,11 @@ import { ajax } from 'rxjs/ajax';
 import { of, Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-import queryString from 'query-string';
+import queryString, { StringifiableRecord } from 'query-string';
 
 import config from '../../shared/config/config.json';
 
-interface RatesPayload {
+interface RatesPayload extends StringifiableRecord {
   base: string;
   symbols: string;
 }

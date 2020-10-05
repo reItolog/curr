@@ -1,8 +1,8 @@
 import React, { memo } from 'react';
 
-import ExchangeForm from '../../components/Result/ExchangeForm/ExchangeForm';
-import ExchangeResult from '../../components/Result/ExchangeResult/ExchangeResult';
-import ExchangeHistory from '../../components/Result/ExchangeHistory/ExchangeHistory';
+import ExchangeForm from '../../components/Results/ExchangeForm/ExchangeForm';
+import ExchangeResult from '../../components/Results/ExchangeResult/ExchangeResult';
+import ExchangeHistory from '../../components/Results/ExchangeHistory/ExchangeHistory';
 
 import styles from './results.module.scss';
 

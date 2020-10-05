@@ -4,11 +4,11 @@ import { catchError, map } from 'rxjs/operators';
 
 import { DateType } from '../../shared/interfaces/exchange';
 
-import queryString from 'query-string';
+import queryString, { StringifiableRecord } from 'query-string';
 
 import config from '../../shared/config/config.json';
 
-interface HistoryPayload {
+interface HistoryPayload extends StringifiableRecord {
   symbols: string;
   start_at: DateType;
   end_at: DateType;
