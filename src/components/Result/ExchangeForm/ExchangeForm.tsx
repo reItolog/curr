@@ -44,7 +44,7 @@ const ExchangeForm = memo(() => {
       to,
       amount,
     };
-
+    console.log(currencyOptions);
     dispatch(Actions.fetchExchangeAsync.request(payload));
   };
 
@@ -53,7 +53,7 @@ const ExchangeForm = memo(() => {
       <div className={styles.formContent}>
         <div className={styles.exchangeSelectContainer}>
           <CurSelect
-            label='From'
+            label={from}
             value={from}
             onChange={handleFromChange}
             currencyData={currencyOptions}

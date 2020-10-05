@@ -8,8 +8,8 @@ const initialState: ExchangeState = {
     rates: {},
   },
   amount: 0,
-  from: 'USD',
-  to: 'EUR',
+  from: 'EUR',
+  to: 'USD',
   error: '',
   loading: false,
 };

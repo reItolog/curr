@@ -7,9 +7,12 @@ import config from '../../shared/config/config.json';
 class OptionsService {
   private baseApiUrl = config.apiBaseUrl;
 
-  fetchOptions(): Observable<string[]> {
-    return ajax.getJSON(`${this.baseApiUrl}/latest`).pipe(
-      map(({ rates }: any) => Object.keys(rates)),
+  fetchOptions(base: string): Observable<string[]> {
+    return ajax.getJSON(`${this.baseApiUrl}/latest/?base=${base}`).pipe(
+      map(({ rates }: any) => {
+        console.log(Object.keys(rates));
+        return Object.keys(rates);
+      }),
       catchError((error) => {
         return of(error);
       }),

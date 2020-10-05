@@ -6,7 +6,8 @@ import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 import { StateType } from 'typesafe-actions';
 
 // OPTIONS FLOW
-import { epics as confiEpics, reducer as options } from './config';
+import {epics as confiEpics} from './config/epics';
+import {reducer as config}  from './config/reducer';
 
 // Exchange Flow
 import { reducer as exchange } from './exchange/reducer';
@@ -28,7 +29,7 @@ const epicMiddleware = createEpicMiddleware();
 
 // Reducers
 const reducer = combineReducers({
-  config: options,
+  config,
   exchange,
   history,
 });
