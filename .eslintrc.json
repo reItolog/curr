@@ -11,7 +11,9 @@
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": ["./tsconfig.json"],
+    "project": [
+      "./tsconfig.json"
+    ],
     "ecmaFeatures": {
       "jsx": true
     },
@@ -22,19 +24,37 @@
     "react": {
       "version": "detect"
     },
-    "import/extensions": [".js", ".jsx", ".ts"]
+    "import/extensions": [
+      ".js",
+      ".jsx",
+      ".ts"
+    ]
   },
-  "plugins": ["react", "@typescript-eslint", "react-hooks"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks"
+  ],
   "rules": {
+    "no-console": 1,
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "import/extensions": "off",
     "import/no-unresolved": "off",
-    "quotes": ["error", "single", { "avoidEscape": true }],
+    "quotes": [
+      "error",
+      "single",
+      {
+        "avoidEscape": true
+      }
+    ],
     "react/display-name": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "semi": ["error", "always"],
+    "semi": [
+      "error",
+      "always"
+    ],
     "react/prop-types": "off"
   }
 }

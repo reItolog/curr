@@ -34,7 +34,7 @@ const ExchangeForm = memo(() => {
   };
 
   const handleAmountChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Number(e.target.value);
+    const value = isNaN(Number(e.target.value)) ?  0 : Number(e.target.value);
     dispatch(Actions.setAmount(value));
   };
 
