@@ -17,7 +17,6 @@ class ErrorBoundary extends PureComponent<Props, State> {
   }
 
   static getDerivedStateFromError(error: Error) {
-    // Оновлюємо стан, щоб наступний рендер показав запасний UI.
     return { hasError: true };
   }
 
