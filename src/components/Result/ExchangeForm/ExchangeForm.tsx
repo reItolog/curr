@@ -47,7 +47,7 @@ const ExchangeForm = memo(() => {
       amount,
     };
 
-    if(from == to) {
+    if(from === to) {
       setExchangeError('pick different currencies!!!');
       return;
     }
