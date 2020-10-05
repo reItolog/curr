@@ -1,4 +1,4 @@
-import React, { memo , useState ,useEffect} from 'react';
+import React, { memo , useState } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -22,10 +22,6 @@ const ExchangeForm = memo(() => {
   const amount = useSelector(getAmount);
 
   const [exchangeError, setExchangeError] = useState('');
-
-  useEffect(() => {
-    console.log(from, to);
-  }, [from , to]);
 
   const handleFromChange = (e: React.ChangeEvent<{ value: unknown }>) => {
     const value = e.target.value as string;

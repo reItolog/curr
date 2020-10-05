@@ -11,7 +11,6 @@ class OptionsService {
     return ajax.getJSON(`${this.baseApiUrl}/latest/?base=${base}`).pipe(
       map(({ rates }: any) => {
         const ratesResult = Object.keys(rates);
-        console.log(  Object.keys(rates));
         ratesResult.push(base);
         return ratesResult;
       }),
