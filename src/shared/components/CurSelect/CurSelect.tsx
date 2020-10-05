@@ -15,10 +15,6 @@ const useStyles = makeStyles((theme: Theme) =>
     selectEmpty: {
       marginTop: theme.spacing(2),
     },
-    empty: {
-      filter: 'blur(10px)',
-      background: 'grey',
-    },
   }),
 );
 

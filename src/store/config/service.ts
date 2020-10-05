@@ -9,10 +9,7 @@ class OptionsService {
 
   fetchOptions(base: string): Observable<string[]> {
     return ajax.getJSON(`${this.baseApiUrl}/latest/?base=${base}`).pipe(
-      map(({ rates }: any) => {
-        console.log(Object.keys(rates));
-        return Object.keys(rates);
-      }),
+      map(({ rates }: any) => Object.keys(rates)),
       catchError((error) => {
         return of(error);
       }),

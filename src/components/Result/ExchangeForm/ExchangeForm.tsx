@@ -61,7 +61,7 @@ const ExchangeForm = memo(() => {
         </div>
         <div className={styles.exchangeSelectContainer}>
           <CurSelect
-            label='To'
+            label={to}
             value={to}
             onChange={handleToChange}
             currencyData={currencyOptions}

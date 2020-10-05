@@ -2,6 +2,7 @@ import React, { useEffect, memo } from 'react';
 import { useDispatch } from 'react-redux';
 
 import AppRouter from './router/AppRouter';
+import ErrorBoundary from './shared/components/ErrorBoundary/ErrorBoundary';
 
 import { Actions } from './store/config/actions';
 
@@ -12,7 +13,12 @@ const App: React.FC = memo(() => {
     dispatch(Actions.fetchOptionsAsync.request());
   }, [dispatch]);
 
-  return <AppRouter />;
+  return (
+    <ErrorBoundary>
+      <AppRouter />
+    </ErrorBoundary>
+  );
+
 });
 
 export default App;
