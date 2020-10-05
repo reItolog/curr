@@ -6,5 +6,5 @@ Technologies stack to start project:
 
 To start project run:
 
-- `npm install` or `yarn install`
-- `npm run start` or `yarn start`
+- `npm install`  
+- `npm run start` 
